@@ -62,3 +62,6 @@ gem 'aws-sdk', '~> 1.0'
 
 # font awesome
 gem 'font-awesome-sass'
+
+# admin panel
+gem 'activeadmin', github: 'gregbell/active_admin'
