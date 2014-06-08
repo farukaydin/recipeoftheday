@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   before_action :find_all_tag_list, only: [:new]
   def index
     @recipes = Recipe
-    @recipes = @recipes.tagged_with params[:q], any: true if params[:q]
+    @recipes = @recipes.tagged_with params[:q], match_all: true if params[:q]
     @recipes = @recipes.paginate page: params[:page]
   end
 
@@ -45,6 +45,6 @@ class RecipesController < ApplicationController
         @all_tag_list << tag.html_safe
       end
     end
-    @all_tag_list
+    @all_tag_list.uniq!
   end
 end
