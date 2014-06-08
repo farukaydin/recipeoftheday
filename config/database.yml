@@ -21,7 +21,3 @@ development:
 test:
   <<: *default
   database: recipeoftheday_test
-
-production:
-  <<: *default
-  database: recipeoftheday_production
