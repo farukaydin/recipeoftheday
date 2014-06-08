@@ -59,3 +59,6 @@ gem 'asset_sync'
 # image upload
 gem "paperclip", "~> 4.1"
 gem 'aws-sdk', '~> 1.0'
+
+# font awesome
+gem 'font-awesome-sass'
