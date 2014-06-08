@@ -36,7 +36,7 @@
         <div class="sidebar-widget">
           <!-- Widget Heading -->
           <h4>Tags</h4>
-          <%  Recipe.tags_on(:tags).each do |tag| %>
+          <%  Recipe.popular_tags.each do |tag| %>
             <%= link_to "#{tag.name} (#{tag.taggings_count})", recipes_path(q: tag.name), class: "btn btn-sm #{sample_btn}" %>
           <% end %>
         </div><!--/ Widget end -->
