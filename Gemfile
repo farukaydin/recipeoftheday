@@ -53,3 +53,5 @@ gem 'quiet_assets', :group => :development
 # application server
 gem 'puma'
 
+# asset sync with s3
+gem 'asset_sync'
