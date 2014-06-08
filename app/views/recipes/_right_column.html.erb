@@ -8,11 +8,11 @@
           <!-- Widget Heading -->
           <h4>Search</h4>
           <!-- search button and input box -->
-          <form role="form" class="form-inline">
+          <form role="form" class="form-inline" action="<%= recipes_path %>">
             <div class="input-group">
               <input type="text" class="form-control" name='q' id="small_search" placeholder="Type to search">
               <span class="input-group-btn">
-                <button class="btn btn-danger" type="button"><i class="fa fa-search"></i></button>
+                <button type="submit" class="btn btn-danger"><i class="fa fa-search"></i></button>
               </span>
             </div>
           </form><!--/ Form end -->

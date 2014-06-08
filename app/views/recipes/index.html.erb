@@ -23,6 +23,9 @@
             <% @recipes.each do |recipe| %>
               <%= render recipe %>
             <% end %>
+            <% if @recipes.empty? %>
+              <h1>There is no suitable recipe for your query. Please try another one.</h1>
+            <% end %>
             <!-- Pagination -->
             <%= will_paginate @recipes %>
             <!-- Pagination end-->

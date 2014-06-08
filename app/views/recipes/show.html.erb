@@ -35,6 +35,18 @@
               <hr /><!-- Horizontal line -->
               <!-- Paragraph -->
               <p><%= @recipe.body %></p>
+              <div class="pull-right single-item col-md-8 col-xs-12">
+                <h5>Ingredients :-</h5>
+                <!-- Recipe ingredients -->
+                <ul class="list-unstyled">
+                  <% @recipe.tag_list.each do |tag| %>
+                  <li>
+                    <i class="fa fa-check"></i> <%= tag %> <span class="pull-right"> 100g</span>
+                    <div class="clearfix"></div>
+                  </li>
+                  <% end %>
+                </ul>
+              </div>
               <div class="clearfix"></div>
             </div> 
             <%= render partial: 'comments', locals: {recipe: @recipe } %>
