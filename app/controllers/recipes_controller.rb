@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  # before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create]
   before_filter :assign_recipe, only: [:show, :edit]
   def index
     @recipes = Recipe

@@ -1,0 +1,29 @@
+<!-- Inner Content -->
+<div class="inner-page padd">
+
+  <!-- Error Start -->
+  
+  <div class="error">
+    <div class="container">
+      <!-- Error page content -->
+      <div class="error-content">
+        <!-- Heading -->
+        <h3>404<span class="red">!!!</span></h3>
+        <!-- Message paragraph -->
+        <p class="text-muted" >We are sorry, the page you requested cannot be found.</p>
+        <!-- search button and input box -->
+        <form role="form" action="<%= recipes_path %>">
+          <div class="input-group">
+            <input type="text" class="form-control" name='q' placeholder="Type to search">
+            <span class="input-group-btn">
+              <button class="btn btn-danger" type="submit">Search</button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Error End -->
+  
+</div><!-- / Inner Page Content End --> 
