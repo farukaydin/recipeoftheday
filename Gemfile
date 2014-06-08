@@ -53,3 +53,6 @@ gem 'puma'
 
 # asset sync with s3
 gem 'asset_sync'
+
+# font awesome
+gem 'font-awesome-sass'

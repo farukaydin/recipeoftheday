@@ -14,7 +14,7 @@ Designed by : http://responsivewebinc.com
  */
 
 body{
-	background: #fff url('/assets/crossword.png') repeat;
+	background: #fff url(asset-path('crossword.png')) repeat;
 	font-family: 'Open Sans', sans-serif;
 	-webkit-font-smoothing: antialiased;
 }
@@ -1080,7 +1080,7 @@ div.ppt { display:none !important; }
  */
 
 .banner {
-	background: url('/assets/banner.jpg') center center repeat-x; 
+	background: url(asset-url('banner.jpg')) center center repeat-x; 
 	text-align: center;
 }
 
