@@ -3,6 +3,7 @@
 /* *************************************** */  
 
 $(document).ready(function() {
+	$('.dropdown-toggle').dropdown();
 	$('.btn-cart-md .cart-link').click(function(e){
 		e.preventDefault();
 		var $dd_menu = $('.btn-cart-md .cart-dropdown')
