@@ -6,7 +6,7 @@ class Recipe < ActiveRecord::Base
   scope :recent, -> { order('id DESC').limit(5) }
   scope :popular_tags, -> {tag_counts_on(:tags).limit(5).order('taggings_count DESC')}
 
-  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/assets/blog/blog2.jpg"
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "blog/blog2.jpg"
   validates_attachment :image,
     :content_type => { :content_type => "image/jpg" ,:content_type => "image/jpeg", :content_type => "image/png" },
     :size => { :in => 0..10000.kilobytes }
