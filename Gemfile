@@ -50,3 +50,6 @@ gem 'will_paginate', '~> 3.0'
 
 # application server
 gem 'puma'
+
+# asset sync with s3
+gem 'asset_sync'
