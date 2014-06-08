@@ -39,12 +39,6 @@ class RecipesController < ApplicationController
   end
 
   def find_all_tag_list
-    @all_tag_list = []
-    Recipe.all.each do |recipe|
-      recipe.tag_list.each do |tag|
-        @all_tag_list << tag.html_safe
-      end
-    end
-    @all_tag_list.uniq!
+    @all_tag_list = Recipe.tag_counts_on(:tags).collect(&:name).uniq
   end
 end
