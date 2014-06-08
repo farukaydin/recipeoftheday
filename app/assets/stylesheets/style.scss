@@ -186,6 +186,14 @@ table { background: #fff; }
 	max-height: 50px;
 }
 
+/*Remove Input Shadows on iPad*/
+@media only screen and (min-width: 0px) and (max-width: 479px) {
+	input[type="text"], input[type="email"], input[type="search"], input[type="password"] {
+		-webkit-appearance: caret;
+		-moz-appearance: caret; /* mobile firefox too! */
+	}
+}
+
 .header .header-search form input[type="text"]{
 	color:#999 !important;
 	border:1px solid #d8d8d8 !important;
@@ -260,6 +268,10 @@ table { background: #fff; }
 	margin-top: -6px;
 	font-size: 13px;
 	color: #bbb;
+	@media only screen and (min-width: 0px) and (max-width: 479px) {
+		margin-left: 5px;
+		margin-top: 6px;
+	}
 }
 
 .header .navbar-default{

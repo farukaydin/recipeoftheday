@@ -28,7 +28,7 @@
               <!-- Meta for this block -->
               <div class="meta">
                 <i class="fa fa-calendar"></i>&nbsp; <%= @recipe.created_at.strftime('%b %d, %Y')%>
-                <span class="pull-right"><i class="fa fa-comment"></i> <a href="#">&nbsp;2 Comments</a></span>
+                <span class="pull-right"><i class="fa fa-comment"></i> <a href="<%= recipe_path(@recipe)%>#disqus_thread"></a></span>
               </div>
               <!-- Heading of the  post -->
               <h3><a href="blog-single.html"><%= @recipe.title %></a></h3>
