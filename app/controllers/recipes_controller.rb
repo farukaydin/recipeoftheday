@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   before_filter :assign_recipe, only: [:show, :edit]
+  before_action :find_all_tag_list, only: [:new]
   def index
     @recipes = Recipe
     @recipes = @recipes.tagged_with params[:q], any: true if params[:q]
@@ -34,6 +35,16 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:title, :body, :status, :image)
+    params.require(:recipe).permit(:title, :body, :status, :image, :tag_list)
+  end
+
+  def find_all_tag_list
+    @all_tag_list = []
+    Recipe.all.each do |recipe|
+      recipe.tag_list.each do |tag|
+        @all_tag_list << tag.html_safe
+      end
+    end
+    @all_tag_list
   end
 end
