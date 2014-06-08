@@ -45,4 +45,7 @@ gem 'devise'
 gem 'pg'
 
 # tagging
-gem 'acts-as-taggable-on'
+gem 'acts-as-taggable-on', '~> 3.2.6'
+
+# pagination
+gem 'will_paginate', '~> 3.0'

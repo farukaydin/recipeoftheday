@@ -1,0 +1,36 @@
+<!-- Banner Start -->
+<div class="banner padd">
+  <div class="container">
+    <!-- Image -->
+    <img class="img-responsive" src="/assets/crown-white.png" alt="" />
+    <!-- Heading -->
+    <h2 class="white">New Recipes</h2>
+    <hr>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<!-- Banner End -->
+
+<!-- Inner Content -->
+<div class="inner-page padd">
+  <!-- Blog Start -->
+  <div class="blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <!-- The new post done by user's all in the post block -->
+          <div class="blog-post">
+            <% @recipes.each do |recipe| %>
+              <%= render recipe %>
+            <% end %>
+            <!-- Pagination -->
+            <%= will_paginate @recipes %>
+            <!-- Pagination end-->
+          </div>
+        </div> <!--/ Main blog column end -->
+        <%= render 'right_column' %>
+      </div><!--/ Row end -->
+    </div>
+  </div>
+  <!-- Blog End -->
+</div><!-- / Wrapper End -->

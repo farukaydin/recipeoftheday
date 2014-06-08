@@ -1,0 +1,62 @@
+<div class="col-md-4">
+  <!-- Blog page sidebar -->
+  <div class="blog-sidebar">
+    <div class="row">
+      <div class="col-md-12 col-sm-6">
+        <!-- Blog sidebar page widget -->
+        <div class="sidebar-widget">
+          <!-- Widget Heading -->
+          <h4>Search</h4>
+          <!-- search button and input box -->
+          <form role="form" class="form-inline">
+            <div class="input-group">
+              <input type="text" class="form-control" name='q' id="small_search" placeholder="Type to search">
+              <span class="input-group-btn">
+                <button class="btn btn-danger" type="button"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </form><!--/ Form end -->
+        </div><!--/ Widget end -->
+      </div>
+      <div class="col-md-12 col-sm-6">
+        <!-- Blog sidebar page widget -->
+        <div class="sidebar-widget">
+          <!-- Widget Heading -->
+          <h4>Recent Post</h4>
+          <!-- Recent post list -->
+          <ul class="list-unstyled">
+            <% Recipe.recent.each do |recipe| %>
+              <li><i class="fa fa-angle-double-right"></i> <%=link_to recipe.title, recipe_path(recipe) %></li>
+            <% end %>
+          </ul>
+        </div><!--/ Widget end -->
+      </div>
+      <div class="col-md-12 col-sm-6">
+        <!-- Blog sidebar page widget -->
+        <div class="sidebar-widget">
+          <!-- Widget Heading -->
+          <h4>Tags</h4>
+          <%  Recipe.tags_on(:tags).each do |tag| %>
+            <%= link_to "#{tag.name} (#{tag.taggings_count})", recipes_path(q: tag.name), class: "btn btn-sm #{sample_btn}" %>
+          <% end %>
+        </div><!--/ Widget end -->
+      </div>
+      <div class="col-md-12 col-sm-6">
+        <!-- Blog sidebar page widget -->
+        <div class="sidebar-widget">
+          <!-- Widget Heading -->
+          <h4>About Us</h4>
+          <!-- Paragraph -->
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna consequat.</p>
+          <!-- Social media icon -->
+          <div class="social">
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a>
+          </div>
+        </div><!--/ Widget end -->
+      </div>
+    </div><!--/ Inner row end -->
+  </div><!--/ Page sidebar end -->
+</div>

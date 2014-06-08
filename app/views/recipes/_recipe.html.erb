@@ -1,0 +1,17 @@
+<div class="entry">
+  <!-- Post Images -->
+  <div class="blog-img pull-left">
+    <%= image_tag recipe.image, class: "img-responsive img-thumbnail" %>
+  </div>
+  <!-- Meta for this block -->
+  <div class="meta">
+    <i class="fa fa-calendar"></i>&nbsp; <%= recipe.created_at.strftime('%b %d, %Y')%>
+    <span class="pull-right"><i class="fa fa-comment"></i> <a href="#">&nbsp;2 Comments</a></span>
+  </div>
+  <!-- Heading of the  post -->
+  <h3><a href="<%= recipe_path(recipe)%>"><%= recipe.title %></a></h3>
+  <hr /><!-- Horizontal line -->
+  <!-- Paragraph -->
+  <p><%= recipe.short_desc %></p>
+  <div class="clearfix"></div>
+</div>
