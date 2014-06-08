@@ -84,4 +84,14 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: ENV['HOST'] }
   config.assets.initialize_on_precompile = false
   config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+
+  # amazon s3 credentials
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['FOG_DIRECTORY'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
 end
