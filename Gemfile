@@ -65,3 +65,6 @@ gem 'font-awesome-sass'
 
 # admin panel
 gem 'activeadmin', github: 'gregbell/active_admin'
+
+# new relic
+gem 'newrelic_rpm'
