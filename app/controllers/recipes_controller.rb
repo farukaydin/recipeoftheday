@@ -54,7 +54,6 @@ class RecipesController < ApplicationController
   end
 
   def search_recipes q
-    q = "%#{q}%"
-    Recipe.select('distinct recipes.*').joins("LEFT JOIN taggings on recipes.id = taggings.taggable_id").joins("LEFT JOIN tags on tags.id = taggings.tag_id").where('title ilike ? OR body ilike ? OR tags.name LIKE ?', q, q, q)
+    Recipe.select('distinct recipes.*').joins("LEFT JOIN taggings on recipes.id = taggings.taggable_id").joins("LEFT JOIN tags on tags.id = taggings.tag_id").where('title ilike ? OR body ilike ? OR tags.name IN (?)', "%#{q}%", "%#{q}%", q.split(','))
   end
 end
