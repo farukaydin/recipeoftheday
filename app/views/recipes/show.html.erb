@@ -43,7 +43,9 @@
                 <span class="pull-right"><i class="fa fa-comment"></i> <a href="<%= recipe_path(@recipe)%>#disqus_thread"></a></span>
               </div>
               <!-- Heading of the  post -->
-              <h3><%= @recipe.title %></h3>
+              <h3><%= @recipe.title %><% if current_user == @recipe.user %>
+                <a href="<%= edit_recipe_path(@recipe)%>" class="pull-right"><i class="fa fa-pencil-square-o"></i></a>
+                <% end %></h3>
               <hr /><!-- Horizontal line -->
               <!-- Paragraph -->
               <p><%= @recipe.body %></p>

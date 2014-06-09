@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  before_filter :assign_recipe, only: [:show, :edit]
-  before_action :find_all_tag_list, only: [:new]
+  before_filter :assign_recipe, only: [:show]
+  before_action :find_all_tag_list, only: [:new, :edit]
   def index
     @recipes = Recipe
     @recipes = search_recipes(params[:q]) if params[:q]
@@ -13,10 +13,21 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    @recipe = current_user.recipes.find params[:id]
+  end
+
+  def update
+    @recipe = current_user.recipes.find(params[:id])
+   
+    if @recipe.update(recipe_params)
+      redirect_to @recipe
+    else
+      render 'edit'
+    end
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = current_user.recipes.new(recipe_params)
     if @recipe.save
       redirect_to @recipe, notice: 'Recipe was successfully created.'
     else
