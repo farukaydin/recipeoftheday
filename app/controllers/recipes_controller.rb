@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   before_action :find_all_tag_list, only: [:new]
   def index
     @recipes = Recipe
-    @recipes = @recipes.tagged_with params[:q], match_all: true if params[:q]
+    @recipes = search_recipes(params[:q]) if params[:q]
     @recipes = @recipes.paginate page: params[:page]
   end
 
@@ -40,5 +40,10 @@ class RecipesController < ApplicationController
 
   def find_all_tag_list
     @all_tag_list = Recipe.tag_counts_on(:tags).collect(&:name).uniq
+  end
+
+  def search_recipes q
+    q = "%#{q}%"
+    Recipe.select('distinct recipes.*').joins("LEFT JOIN taggings on recipes.id = taggings.taggable_id").joins("LEFT JOIN tags on tags.id = taggings.tag_id").where('title ilike ? OR body ilike ? OR tags.name LIKE ?', q, q, q)
   end
 end
