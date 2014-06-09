@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe
     @recipes = search_recipes(params[:q]) if params[:q]
-    @recipes = @recipes.paginate page: params[:page], per_page: 5
+    @recipes = @recipes.order('updated_at DESC').paginate page: params[:page], per_page: 5
   end
 
   def new
