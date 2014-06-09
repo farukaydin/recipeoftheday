@@ -10,10 +10,6 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  # error handling
-  unless Rails.application.config.consider_all_requests_local
-    get '*not_found', to: 'errors#error_404'
-  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -62,4 +58,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  # error handling
+  unless Rails.application.config.consider_all_requests_local
+    get '*not_found', to: 'errors#error_404'
+  end
 end
