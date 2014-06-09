@@ -22,8 +22,20 @@
           <div class="blog-post">
             <div class="entry">
               <!-- Post Images -->
-              <div class="blog-img pull-left">
-                <%= image_tag @recipe.image, class: "img-responsive img-thumbnail" %>
+              <div class="blog-img pull-left gallery-content">
+                <div class="element">
+                  <!-- Image -->
+                  <%= image_tag @recipe.image, class: "img-responsive img-thumbnail" %>
+                  <!-- Gallery Image Hover Effect -->
+                  <span class="gallery-img-hover"></span>
+                  <!-- Gallery Image Hover Icon -->
+                  <a href="<%= image_path @recipe.image %>" class="gallery-img-link">
+                    <i class="fa fa-search-plus hover-icon icon-left"></i>
+                  </a>
+                  <a href="<%= image_path @recipe.image %>">
+                    <i class="fa fa-link hover-icon icon-right"></i>
+                  </a>
+                </div>
               </div>
               <!-- Meta for this block -->
               <div class="meta">
@@ -58,3 +70,12 @@
   </div>
   <!-- Blog End -->
 </div><!-- / Wrapper End -->
+
+  <script>
+  /* Gallery */
+
+  jQuery(".gallery-img-link").prettyPhoto({
+     overlay_gallery: false, social_tools: false
+  });
+  
+  </script>

@@ -71,3 +71,6 @@ gem 'newrelic_rpm'
 
 # sentry
 gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
+
+# selectize
+gem "selectize-rails"
