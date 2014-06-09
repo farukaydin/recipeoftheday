@@ -3,6 +3,7 @@ class Recipe < ActiveRecord::Base
 
   acts_as_taggable
 
+  default_scope where(:status => 1)
   scope :recent, -> { order('id DESC').limit(5) }
   scope :popular_tags, -> {tag_counts_on(:tags).limit(5).order('taggings_count DESC')}
 

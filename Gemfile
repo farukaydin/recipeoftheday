@@ -68,3 +68,6 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 
 # new relic
 gem 'newrelic_rpm'
+
+# sentry
+gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
